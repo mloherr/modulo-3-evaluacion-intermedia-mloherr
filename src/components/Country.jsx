@@ -4,7 +4,7 @@ function Country({ dataCountries }) {
   return (
     <div className="countryContainer">
       <p>{dataCountries.flag}</p>
-      <h5>{dataCountries.name.common}</h5>
+      <h5>{dataCountries.name.official}</h5>
       <p>{dataCountries.capital}</p>
       <p>{dataCountries.continents}</p>
     </div>
