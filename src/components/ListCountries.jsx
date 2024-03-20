@@ -1,9 +1,9 @@
 import '../scss/components/ListCountries.scss';
 import Country from './Country';
 
-function ListCountries({ dataCountries }) {
+function ListCountries({ dataCountries, index }) {
   return (
-    <div className="mainContainerCountries">
+    <div key={index} className="mainContainerCountries">
       {dataCountries.map((countryInfo) => {
         return <Country dataCountries={countryInfo} />;
       })}

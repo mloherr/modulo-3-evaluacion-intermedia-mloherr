@@ -17,17 +17,16 @@ function App() {
     setSelectInputValue(value);
   };
 
-  const searchedCountries = dataCountries.filter((dataCountries) => {
-    return dataCountries.name.official
-      .toLowerCase()
-      .includes(searchInputValue.toLowerCase());
-  });
-
-  const selectedCountries = dataCountries.filter((selectedDataCountry) => {
+  const filteredCountries = dataCountries.filter((countryData) => {
     if (selectInputValue === 'all') {
-      return true;
+      return dataCountries;
     } else {
-      return selectedDataCountry.continents === selectInputValue;
+      return (
+        countryData.name.common
+          .toLocaleLowerCase()
+          .includes(searchInputValue.toLocaleLowerCase()) &&
+        countryData.continents.includes(selectInputValue)
+      );
     }
   });
 
@@ -51,7 +50,7 @@ function App() {
           <AddCountry />
         </section>
         <section className="main__listCountries">
-          <ListCountries dataCountries={selectedCountries} />
+          <ListCountries dataCountries={filteredCountries} />
         </section>
       </main>
     </>

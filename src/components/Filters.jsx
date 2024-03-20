@@ -3,7 +3,7 @@ function Filters({ onChangeSearchInput, onChangeSelectInput }) {
     onChangeSearchInput(ev.target.value);
   };
   const handleSelectInput = (ev) => {
-    onChangeSelectInput(ev.currentTarget.value);
+    onChangeSelectInput(ev.target.value);
   };
   return (
     <>
