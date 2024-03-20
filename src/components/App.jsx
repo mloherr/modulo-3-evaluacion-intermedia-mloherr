@@ -22,9 +22,7 @@ function App() {
           <AddCountry />
         </section>
         <section className="main__listCountries">
-          <ul>
-            <ListCountries />
-          </ul>
+          <ListCountries dataCountries={dataCountries} />
         </section>
       </main>
     </>
